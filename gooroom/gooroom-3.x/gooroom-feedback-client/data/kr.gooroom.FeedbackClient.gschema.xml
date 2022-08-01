@@ -1,0 +1,9 @@
+<schemalist>
+  <schema gettext-domain="gooroom-feedback-client" id="kr.gooroom.FeedbackClient" path="/kr/gooroom/feedback-client/">
+    <key name="server-url" type="s">
+      <default>'https://feedback.gooroom.kr:8000/gooroom/feedback/new'</default>
+      <summary>The URL for feedback client</summary>
+      <description>The URL for feedback client</description>
+    </key>
+  </schema>
+</schemalist>

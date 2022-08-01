@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+/bin/systemctl daemon-reload || true
+/bin/systemctl enable gooroom-feedback-server || true
+/bin/systemctl start gooroom-feedback-server || true
+
+exit 0

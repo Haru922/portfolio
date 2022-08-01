@@ -1,0 +1,94 @@
+* {
+  -GtkDialog-button-spacing: 10;
+}
+
+.title-label {
+  color: #000100;
+  font-size: 110%;
+  font-weight: 600; }
+
+.submit-status-label.success {
+  color: rgba (0, 1, 0, 0.5); }
+.submit-status-label.failure {
+  color: #d0021b; }
+
+
+.subtitle-box {
+  min-height: 54px; }
+  .subtitle-box label {
+    font-size: 120%;
+    color: #000000;
+    font-weight: bold; }
+
+.list-box {
+  background-color: transparent; }
+
+.list-row {
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.05); }
+  .list-row .title-label {
+    color: #000100;
+    font-size: 110%; }
+  .list-row .datetime-label {
+    color: rgba(0, 1, 0, 0.5);
+    font-size: 90%; }
+  .list-row:hover {
+    background-color: rgba(74, 115, 214, 0.15); }
+  .list-row:selected {
+    background-color: #4a73d6; }
+  .list-row:selected .type-image {
+    color: #ffffff; }
+  .list-row:selected .title-label {
+    color: #ffffff; }
+  .list-row:selected .datetime-label {
+    color: rgba(255, 255, 255, 0.6); }
+
+.new-button {
+  border: none;
+  color: #ffffff;
+  padding: 8px 27px;
+  box-shadow: none;
+  border-radius: 10px;
+  background-image: none;
+  background-color: #3e6ddc; }
+.new-button:hover {
+  background-color: #2f58b7; }
+.new-button:active {
+  background-color: #2a4ea3; }
+
+.write-dialog-button {
+  border: none;
+  color: #ffffff;
+  padding: 8px 48px;
+  box-shadow: none;
+  border-radius: 10px;
+  background-image: none;
+  background-color: #3e6ddc; }
+.write-dialog-button:hover {
+  background-color: #2f58b7; }
+.write-dialog-button:active {
+  background-color: #2a4ea3; }
+
+.title-entry {
+  color: rgba(0, 1, 0, 0.5);
+  padding: 8px 15px;
+  box-shadow: none;
+  border-radius: 10px;
+  border-color: rgba(0, 0, 0, 0.2); }
+
+.description-scrolled-window {
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: solid 1px rgba(0, 0, 0, 0.2); }
+
+textview.view {
+  border-radius: 10px;
+  background-color: transparent; }
+
+textview text {
+  color: rgba(0, 1, 0, 0.5);
+  background-color: transparent; }

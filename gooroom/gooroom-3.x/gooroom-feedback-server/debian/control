@@ -1,0 +1,11 @@
+Source: gooroom-feedback-server
+Section: admin
+Priority: optional
+Maintainer: Gooroom Engineering Team <devel-os@gooroom.kr>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.1.3
+Homepage: http://www.gooroom.kr
+
+Package: gooroom-feedback-server
+Architecture: all
+Description: gooroom-feedback-client.

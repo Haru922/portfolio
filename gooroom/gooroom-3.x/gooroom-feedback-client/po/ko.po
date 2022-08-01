@@ -1,0 +1,161 @@
+# Korean translation for gooroom-feedback-client package.
+# Copyright (C) 2021 THE gooroom-feedback-client'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gooroom-feedback-client package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gooroom-feedback-client 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-18 15:58+0900\n"
+"PO-Revision-Date: 2021-07-30 17:57+0900\n"
+"Last-Translator: Gooroom <gooroom@gooroom.kr>\n"
+"Language-Team: Gooroom <gooroom@gooroom.kr>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. 12-hour mode
+#: src/gooroom-feedback-app-window.c:142
+msgid "%B %-d %Y   %l:%M:%S %p"
+msgstr "%Y년 %B %-d일 %p %l:%M:%S"
+
+#: src/gooroom-feedback-app-window.c:144
+msgid "%B %-d %Y   %T"
+msgstr "%Y년 %B %-d일 %T"
+
+#: src/gooroom-feedback-list-row.c:57
+msgid "No Title"
+msgstr "제목없음"
+
+#: src/gooroom-feedback-list-row.c:58
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#: src/gooroom-feedback-list-row.c:59
+msgid "No Description"
+msgstr "내용없음"
+
+#: src/gooroom-feedback-list-row.c:60 src/gooroom-feedback-write-dialog.c:111
+msgid "FAILURE"
+msgstr "실패"
+
+#: src/gooroom-feedback-list-row.c:83 src/gooroom-feedback-write-dialog.c:106
+msgid "SUCCESS"
+msgstr "성공"
+
+#: src/gooroom-feedback-list-row.c:85
+msgid "Submit Success"
+msgstr "작성됨"
+
+#: src/gooroom-feedback-list-row.c:88
+msgid "Submit Failure"
+msgstr "등록실패"
+
+#: src/gooroom-feedback-write-dialog.c:41
+msgid "Gooroom Feedback Submit"
+msgstr "구름 피드백 보내기"
+
+#: src/gooroom-feedback-write-dialog.c:107
+msgid ""
+"\n"
+"Thanks for taking the time to give us feedback.\n"
+msgstr ""
+"\n"
+"피드백을 보내주셔서 감사합니다.\n"
+
+#: src/gooroom-feedback-write-dialog.c:112
+msgid ""
+"\n"
+"Internal Server Error.\n"
+msgstr ""
+"\n"
+"내부 서버 오류.\n"
+
+#: src/gooroom-feedback-write-dialog.c:121
+msgid ""
+"\n"
+"Please provide us more detailed information of your feedback.\n"
+msgstr ""
+"\n"
+"조금 더 자세한 정보를 제공해주세요.\n"
+
+#: src/gooroom-feedback-utils.c:151
+msgid ""
+"Internal Server Error.\n"
+"Please check the network configuration."
+msgstr ""
+"내부 서버 오류입니다.\n"
+"네트워크 설정을 확인해주세요."
+
+#: src/gooroom-feedback-utils.c:154
+msgid ""
+"External Server Error.\n"
+"Please check the server configuration."
+msgstr ""
+"외부 서버 오류입니다.\n"
+"서버 설정을 확인해주세요."
+
+#: resources/gooroom-feedback-app-window.ui:32
+msgid "Gooroom Feedback List"
+msgstr "구름 피드백 목록"
+
+#: resources/gooroom-feedback-app-window.ui:114
+msgid ""
+"Send us your feedback to improve the Gooroom platform.\n"
+"User information will not be collected.\n"
+"Please click the 'New' button to create."
+msgstr ""
+"구름 플랫폼의 개선을 위한 피드백을 전송할 수 있으며,\n"
+"사용자의 개인정보는 수집되지 않습니다.\n"
+"피드백을 보내기 원하시면, 아래의 '신규작성' 버튼을 클릭하세요."
+
+#: resources/gooroom-feedback-app-window.ui:175
+msgid "New"
+msgstr "신규작성"
+
+#: resources/gooroom-feedback-app-window.ui:214
+msgid "Gooroom Feedback"
+msgstr "구름 피드백"
+
+#: resources/gooroom-feedback-write-dialog.ui:9
+msgid "Gooroom Feedback Writer"
+msgstr "구름 피드백 작성하기"
+
+#: resources/gooroom-feedback-write-dialog.ui:50
+msgid "Select Feedback Category."
+msgstr "피드백 종류를 선택해주세요."
+
+#: resources/gooroom-feedback-write-dialog.ui:64
+msgid "Problem"
+msgstr "기능 오류"
+
+#: resources/gooroom-feedback-write-dialog.ui:81
+msgid "Suggestion"
+msgstr "의견 제시"
+
+#: resources/gooroom-feedback-write-dialog.ui:114
+msgid "Title"
+msgstr "제목"
+
+#: resources/gooroom-feedback-write-dialog.ui:133
+msgid "Enter title here."
+msgstr "제목을 입력하세요."
+
+#: resources/gooroom-feedback-write-dialog.ui:162
+msgid "Description"
+msgstr "상세내용"
+
+#: resources/gooroom-feedback-write-dialog.ui:223
+msgid "Submit"
+msgstr "보내기"
+
+#: resources/gooroom-feedback-write-dialog.ui:240
+msgid "Cancel"
+msgstr "취소"
+
+#: data/gooroom-feedback-client.desktop.in:3
+msgid "Gooroom Feedback Client"
+msgstr "구름 피드백"

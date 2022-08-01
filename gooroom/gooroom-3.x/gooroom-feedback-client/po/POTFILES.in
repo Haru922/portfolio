@@ -1,0 +1,7 @@
+src/gooroom-feedback-app-window.c
+src/gooroom-feedback-list-row.c
+src/gooroom-feedback-write-dialog.c
+resources/gooroom-feedback-app-window.ui
+resources/gooroom-feedback-list-row.ui
+resources/gooroom-feedback-write-dialog.ui
+data/gooroom-feedback-client.desktop.in

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <template class="GooroomFeedbackListRow" parent="GtkListBoxRow">
+    <property name="visible">True</property>
+    <property name="can-focus">True</property>
+    <child>
+      <!-- n-columns=2 n-rows=3 -->
+      <object class="GtkGrid" id="grid">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="valign">center</property>
+        <property name="row-spacing">3</property>
+        <property name="column-spacing">10</property>
+        <child>
+          <object class="GtkImage" id="category_image">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">start</property>
+            <property name="icon-name">gooroom-feedback-client-problem-symbolic</property>
+            <property name="icon_size">6</property>
+            <style>
+              <class name="type-image"/>
+            </style>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">0</property>
+            <property name="height">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="title_label">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="label">Title</property>
+            <property name="ellipsize">end</property>
+            <property name="single-line-mode">True</property>
+            <property name="lines">1</property>
+            <property name="xalign">0</property>
+            <style>
+              <class name="title-label"/>
+            </style>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRevealer" id="description_revealer">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkLabel" id="description_label">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-top">10</property>
+                <property name="label">Description</property>
+                <property name="wrap">True</property>
+                <property name="wrap-mode">char</property>
+                <property name="width-chars">0</property>
+                <property name="max-width-chars">0</property>
+                <property name="xalign">0</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkLabel" id="datetime_label">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label">Datetime</property>
+                <property name="single-line-mode">True</property>
+                <property name="lines">1</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="datetime-label"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="submit_status_label">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label">Submit Status</property>
+                <style>
+                  <class name="submit-status-label"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="list-row"/>
+    </style>
+  </template>
+</interface>

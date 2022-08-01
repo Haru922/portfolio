@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Gooroom Feedback Client
+Exec=gooroom-feedback-client
+Terminal=false
+Type=Application
+Icon=gooroom-feedback-client
+Categories=GNOME;GTK;System;
+StartupNotify=true

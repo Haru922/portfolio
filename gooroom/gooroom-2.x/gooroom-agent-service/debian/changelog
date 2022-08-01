@@ -1,0 +1,119 @@
+gooroom-agent-service (0.4.3+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [8f06d2b6] add auto-upgrade and recovery task.
+  * [1fdc1fe1] add client_id in agent_lsf
+  * [5f023013] prevent user privilege from stopping|reloading agent
+
+  [ byunghui.jeun ]
+  * [3cccc662] Add Wrapped SCP Class.
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 19 May 2022 10:02:51 +0900
+
+gooroom-agent-service (0.4.2+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [36757eef] add ls_al and read_file tasks #2
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 05 Oct 2021 15:50:57 +0900
+
+gooroom-agent-service (0.4.1+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [29efb503] add cleanmode task
+  * [6c6573f8] change update_binary[] depending on gooroom version
+  * [ceb5ddd5] add ls_al and read_file tasks
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Wed, 18 Aug 2021 15:01:21 +0900
+
+gooroom-agent-service (0.4.0+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [8b0b0fd9] change apt-get to apt
+  * [5ae0cf8e] add machine-id task and modify apt_exec
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Mon, 19 Jul 2021 15:54:49 +0900
+
+gooroom-agent-service (0.3.9+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [e05a97ad] change lsf passphrase and lsf structure
+  * [6b2b5e0b] remove datetime from log file name
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 11 May 2021 10:07:12 +0900
+
+gooroom-agent-service (0.3.8+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [ebb2bb5c] [Bug:1852] fix multiple printer polkit autentication
+
+  [ jongkyung.woo ]
+  * [f90e3018] Add override_dh_installdeb
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Sun, 28 Mar 2021 13:18:32 +0900
+
+gooroom-agent-service (0.3.7+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [eb544518] add KCMVP
+  * [fe2efb0a] fix kcmvp
+  * [4807892b] police issue(lightdm-autologin)
+  * [bc9f044a] add expired_passwd task
+  * [6063e0d0] add change_passwd task
+  * [79563d14] remove hypervisor in client_sync
+  * [05101fb9] write 0 into GOOROOM-SECURITY-STATUS-VULNERABLE
+  * [073620cc] add sleep_inactive_time task
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Wed, 10 Mar 2021 17:10:03 +0900
+
+gooroom-agent-service (0.3.6+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [a4974a08] add apt-get update in client_sync (EMERG)
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Fri, 04 Dec 2020 13:22:02 +0900
+
+gooroom-agent-service (0.3.5+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [87a8a4be] ===== ADD LSF AND USB-WHITELIST =====
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Mon, 02 Nov 2020 16:04:54 +0900
+
+gooroom-agent-service (0.3.4+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [e50cc982] redo dbus whitelist and rm daemon_able/reload from dbus tasks
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 12 May 2020 15:36:22 +0900
+
+gooroom-agent-service (0.3.3+grm2u1) unstable; urgency=medium
+
+  [ hmkim ]
+  * [44a9f32e] removed shell argument of popen
+  * [ddc61d55] fixed mistyping
+  * [f772dc21] fixed mistyping of printer polkit actionid
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 11 Feb 2020 09:38:37 +0900
+
+gooroom-agent-service (0.3.2+grm2u1) unstable; urgency=medium
+
+  * Initial Release
+  [ hmkim ]
+  * [ad551a35] formated debian/control
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 03 Dec 2019 12:21:30 +0900

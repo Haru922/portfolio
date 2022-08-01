@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/kr/gooroom/gooroom-feedback-client">
+    <file preprocess="xml-stripblanks">gooroom-feedback-app-window.ui</file>
+    <file preprocess="xml-stripblanks">gooroom-feedback-list-row.ui</file>
+    <file preprocess="xml-stripblanks">gooroom-feedback-write-dialog.ui</file>
+    <file alias="gooroom-feedback-client-init">../data/gooroom-feedback-client-init.svg</file>
+    <file alias="ic-new">../data/ic-new.svg</file>
+    <file>gooroom-feedback-client.css</file>
+  </gresource>
+</gresources>

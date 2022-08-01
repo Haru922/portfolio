@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module name="log" version="1.0" xmlns="http://www.gooroom.kr/job">
+    <desc>
+    </desc>
+
+    <param name="module_name" type="string"/>
+
+    <task name="client_info" polltime="300">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <!-- terminalInfo -->
+            <param name="terminal_info" type="csv_string">
+                <col name="mac" type="string"/>
+                <col name="os" type="string"/>
+                <col name="kernel" type="string"/>
+                <col name="ip" type="string"/>
+            </param>
+
+            <!-- safeScore -->
+            <param name="safe_score" type="csv_string">
+                <col name="package_count" type="string"/>
+                <col name="score" type="int"/>
+            </param>
+
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+
+    <task name="clear_security_alarm" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+
+    <task name="security_log" polltime="10">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+            <param name="user_id" type="string"/>
+            <!-- need to define map type -->
+            <param name="logs" type="map"/>
+        </request>
+        <response>
+        </response>
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+
+    <task name="journal_remover" bootable="yes" mustok="no" polltime="3600">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+
+    <task name="app_info" bootable="yes" mustok="no" priority="9" polltime="180" lsf="yes">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+
+    <task name="app_log" bootable="yes" mustok="no" priority="9" polltime="60" lsf="yes">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+
+    <!--
+    <task name="sched_info" bootable="yes" mustok="no" priority="9">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="local_ip" type="string"/>
+            <param name="mac" type="string"/>
+            <param name="arp_list" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+
+    <task name="browser_url" polltime="60">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+            <param name="logs" type="csv_string_array">
+                <col name="log_dt" type="string"/>
+                <col name="user_id" type="string"/>
+                <col name="log_tp" type="string"/>
+                <col name="url" type="string"/>
+            </param>
+        </request>
+        <response>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+
+        </out>
+    </task>
+    -->
+</module>

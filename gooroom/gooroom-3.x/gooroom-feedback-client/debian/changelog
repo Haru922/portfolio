@@ -1,0 +1,12 @@
+gooroom-feedback-client (1.3.0+grm3u1) unstable; urgency=medium
+
+  [ Haru ]
+  * [6ae91d80] Minor Change.
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Sun, 05 Dec 2021 14:34:00 +0900
+
+gooroom-feedback-client (1.0.0) unstable; urgency=medium
+
+  *Initial Release.
+
+ -- Gooroom <gooroom@gooroom.kr>  Mon, 19 Apr 2021 15:00:00 +0900

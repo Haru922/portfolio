@@ -1,0 +1,9 @@
+[Unit]
+Description=Gooroom Feedback Server
+
+[Service]
+ExecStart=/usr/lib/gooroom-feedback-server/gooroom-feedback-server
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target

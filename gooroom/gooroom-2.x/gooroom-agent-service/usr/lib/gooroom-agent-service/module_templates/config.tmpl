@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module name="config" version="1.0" xmlns="http://www.gooroom.kr/job">
+
+    <param name="module_name" type="string"/>
+
+    <!-- CONFIG_FILE TYPE -->
+    <simpleType name="CONFIG_FILE">
+        <restriction base="string">
+			<enum value="/etc/gooroom/agent/server_certificate.crt"/>
+            <enum value="/usr/lib/gooroom-agent-service/module_templates/config.tmpl"/>
+            <enum value="/etc/apt/sources.list.d/official-package-repositories.list"/>
+            <enum value="/etc/apt/preferences.d/gooroom.pref"/>
+            <enum value="/etc/hosts"/>
+            <!--<enum value="/etc/gooroom/*/.grac.conf"/> -->
+            <enum value="/etc/gooroom/grac.d/user.rules"/> 
+            <enum value="/usr/share/gooroom/browser/policies/mainpref.json"/>
+            <enum value="/usr/share/gooroom/browser/policies/trust/managed/policy.json"/>
+            <enum value="/usr/share/gooroom/browser/policies/untrust/managed/policy.json"/>
+            <enum value="/usr/share/gooroom/browser/policies/trust/managed/ui-policy.json"/>
+            <enum value="/usr/share/gooroom/browser/policies/untrust/managed/ui-policy.json"/>
+            <enum value="/usr/lib/gooroom-security-utils/log.conf"/>
+            <enum value="/etc/gooroom/agent/polkit.json"/>
+            <enum value="/var/tmp/lsf/private/whitelist.policy"/>
+        </restriction>
+    </simpleType>
+
+    <!-- GET CLIENT CONFIG FILE -->
+    <task name="get_client_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="file_name" type="CONFIG_FILE"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+            <param name="file_contents" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET UPDATE SERVER CONFIG FILE -->
+    <task name="get_update_server_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+            <param name="file_name_list" type="string_array"/>
+            <param name="file_contents_list" type="string_array"/>
+            <param name="signature_list" type="string_array"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- APPEND CONTENTS HOSTS -->
+    <task name="append_contents_etc_hosts">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="file_contents" type="string"/>
+            <param name="signature" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SET AUTHORITY CONFIG -->
+    <task name="set_authority_config" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string"/>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="file_name_list" type="string_array"/>
+            <param name="file_contents_list" type="string_array"/>
+            <param name="signature_list" type="string_array"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET PASSWORD CYCLE -->
+    <task name="get_password_cycle">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="password_time" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET SCREEN TIME -->
+    <task name="get_screen_time">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="screen_time" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SET SERVERJOB DISPATCH TIME CONFIG -->
+    <task name="set_serverjob_dispatch_time_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="dispatch_time" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET_SERVERJOB_DISPATCH_TIME -->
+    <task name="get_serverjob_dispatch_time">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+            <param name="dispatch_time" type="string"/>
+        </response>
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET_NTP_LIST_CONFIG -->
+    <task name="get_ntp_list_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+            <param name="ntp_list" type="csv_string"/>
+        </response>
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET_SERVER_TIME -->
+    <!-- <task name="get_server_time" bootable="yes" mustok="no" priority="100"> -->
+    <task name="get_server_time">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+        </request>
+        <response>
+            <param name="time" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SET_HYPERVISOR_OPERATION -->
+    <task name="set_hypervisor_operation">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="operation" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET_HYPERVISOR_OPERATION -->
+    <task name="get_hypervisor_operation">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id="null" seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="operation" type="string"/>
+        </response>
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SET_PACKAGE_OPERATION -->
+    <task name="set_package_operation" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="operation" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET_PACKAGE_OPERATION -->
+    <task name="get_package_operation" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <out>
+            <param name="operation" type="string"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET MEDIA CONFIG -->
+    <task name="get_media_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="file_name" type="string"/>
+            <param name="file_contents" type="string"/>
+            <param name="signature" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET BROWSER CONFIG -->
+    <task name="get_browser_config" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="file_name_list" type="string_array"/>
+            <param name="file_contents_list" type="string_array"/>
+            <param name="signature_list" type="string_array"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET UPDATE OPERATION WITH LOGINID-->
+    <task name="get_update_operation_with_loginid" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string"/>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="operation" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET UPDATE OPERATION -->
+    <task name="get_update_operation">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="operation" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- TELL UPDATE OPERATION -->
+    <task name="tell_update_operation" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <out>
+            <param name="operation" type="string"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- CLIENT SYNC -->
+    <task name="client_sync" bootable="yes" mustok="yes" priority="-2">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="update_base_urls" type="string"/>
+            <param name="certificate" type="string"/>
+            <param name="dispatch_time" type="string"/>
+            <param name="hyper_operation" type="string"/>
+            <param name="time" type="string"/>
+            <param name="file_name_list" type="string"/>
+            <param name="file_contents_list" type="string"/>
+            <param name="signature_list" type="string"/>
+            <param name="isDeleteLog" type="string"/>
+            <param name="logRemainDate" type="string"/>
+            <param name="logMaxCount" type="string"/>
+            <param name="logMaxSize" type="string"/>
+            <param name="systemKeepFree" type="string"/>
+        </response>
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- CLIENT USER SYNC -->
+    <task name="client_user_sync" bootable="yes" mustok="yes" priority="-1">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="screen_time" type="string"/>
+            <param name="password_time" type="string"/>
+            <param name="operation" type="string"/>
+            <param name="file_name_list" type="string"/>
+            <param name="file_contents_list" type="string"/>
+            <param name="signature_list" type="string"/>
+        </response>
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET APP LIST -->
+    <task name="get_app_list" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string" optional="yes"/>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response> <param name="black_list" type="string"/>
+        </response>
+        <out>
+            <param name="black_list" type="string"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET LOG CONFIG -->
+    <task name="get_log_config" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string" optional="yes"/>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="file_name" type="string"/>
+            <param name="file_contents" type="string"/>
+            <param name="signature" type="string"/>
+            <param name="isDeleteLog" type="string"/>
+            <param name="logRemainDate" type="string"/>
+            <param name="logMaxCount" type="string"/>
+            <param name="logMaxSize" type="string"/>
+            <param name="systemKeepFree" type="string"/>
+        </response>
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SET HOMEFOLDER OPERATION -->
+    <task name="set_homefolder_operation">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="operation" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- DPMS OFF TIME -->
+    <task name="dpms_off_time" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string"/>
+        </in>
+
+        <out>
+            <param name="screen_time" type="int"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET CONTROLCENTER ITEMS -->
+    <task name="get_controlcenter_items" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string" optional="yes"/>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="controlcenter_items" type="string"/>
+        </response>
+        <out>
+            <param name="controlcenter_items" type="string"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET POLICYKIT CONFIG -->
+    <task name="get_policykit_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="file_name" type="string"/>
+            <param name="file_contents" type="string"/>
+            <param name="signature" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- UPDATE DISPATCH TIME -->
+    <task name="update_dispatch_time">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="dispatch_time" type="string"/>
+        </request>
+        <response>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET ACCOUNT CONFIG -->
+    <task name="get_account_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="root_use" type="string"/>
+            <param name="sudo_use" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET POLKIT ADMIN CONFIG -->
+    <task name="get_polkit_admin_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="polkit_admin" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SET AUTHORITY CONFIG LOCAL-->
+    <task name="set_authority_config_local" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string"/>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="polkit_admin" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET SECUREAPP CONFIG -->
+    <task name="get_secureapp_config" bootable="yes" mustok="no" priority="9" lsf="yes">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+            <param name="require_key" type="string"/>
+        </request>
+        <response>
+            <param name="file_name" type="string"/>
+            <param name="file_contents" type="string"/>
+            <param name="signature" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- CLIENT EVENT USB WHITELIST -->
+    <task name="client_event_usb_whitelist" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="action" type="string"/>
+            <param name="datetime" type="string"/>
+            <param name="login_id" type="string"/>
+            <param name="usb_name" type="string"/>
+            <param name="usb_product" type="string"/>
+            <param name="usb_size" type="string"/>
+            <param name="usb_vendor" type="string"/>
+            <param name="usb_serial" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+            <param name="state" type="string"/>
+        </out>
+    </task>
+
+    <!-- SERVER EVENT USB WHITELIST -->
+    <task name="server_event_usb_whitelist">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="action" type="string"/>
+            <param name="datetime" type="string"/>
+            <param name="login_id" type="string"/>
+            <param name="usb_name" type="string"/>
+            <param name="usb_product" type="string"/>
+            <param name="usb_size" type="string"/>
+            <param name="usb_vendor" type="string"/>
+            <param name="usb_serial" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+            <param name="state" type="string"/>
+        </out>
+    </task>
+
+    <!-- SVR POLICE CMD-->
+    <task name="svr_police_cmd">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="cmd_id" type="string"/>
+            <param name="cmd_data" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- EXPIRE PASSWD-->
+    <task name="expire_passwd">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="id" type="string"/>
+            <param name="tp" type="string"/>
+            <param name="tm" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- EXPIRE PASSWD-->
+    <task name="change_passwd">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="idpw" type="map_array"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- GET SLEEP INACTIVE TIME -->
+    <task name="get_sleep_inactive_time">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+            <param name="login_id" type="string"/>
+        </request>
+        <response>
+            <param name="sleep_inactive_time" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SLEEP INACTIVE TIME -->
+    <task name="sleep_inactive_time" dbus="allow">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="login_id" type="string"/>
+        </in>
+
+        <out>
+            <param name="sleep_inactive_time" type="int"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- SET CLEANMODE CONFIG -->
+    <task name="set_cleanmode_config">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="cleanmode_use" type="string"/>
+        </in>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- LS AL -->
+    <task name="ls_al">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="path" type="string"/>
+        </in>
+
+        <out>
+            <param name="path" type="string"/>
+            <param name="ls" type="string"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- READ FILE -->
+    <task name="read_file">
+        <param name="task_name" type="string"/>
+
+        <in>
+            <param name="path" type="string"/>
+            <param name="fname" type="string"/>
+            <param name="sp" type="string"/>
+            <param name="ep" type="string"/>
+        </in>
+
+        <out>
+            <param name="path" type="string"/>
+            <param name="fname" type="string"/>
+            <param name="lines" type="string"/>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+    <!-- get_auto_upgrade_and_recover -->
+    <task name="get_auto_upgrade_and_recover">
+        <param name="task_name" type="string"/>
+
+        <in>
+        </in>
+
+        <request id='null' seq="null">
+        </request>
+        <response>
+            <param name="isAutoUpdate" type="string"/>
+            <param name="autoUpdateCycle" type="string"/>
+            <param name="retryCount" type="string"/>
+            <param name="isRecovery" type="string"/>
+        </response>
+
+        <out>
+            <param name="status" type="string"/>
+            <param name="message" type="string"/>
+        </out>
+    </task>
+
+</module>
